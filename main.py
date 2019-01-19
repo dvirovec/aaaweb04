@@ -28,7 +28,7 @@ port='5040' # <--------------------------- 5040 zamijeniti sa 5000 + vaš redni 
 
 title="Autorizacija i autentifikacija";
 
-conn = psycopg2.connect(host="localhost",database='student1',user='student1',password='student1')
+conn = psycopg2.connect(host="localhost",database=student,user=student,password=student)
 
 sql_spremi_registraciju = """INSERT INTO korisnik (username, password, ime_prezime) VALUES (%s, %s, %s);"""
 sql_podaci_korisnika = """SELECT password, ime_prezime FROM korisnik WHERE username = %s;"""
