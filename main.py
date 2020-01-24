@@ -32,8 +32,8 @@ conn = psycopg2.connect(host="localhost",database=student,user=student,password=
 
 sql_spremi_registraciju = """INSERT INTO korisnik (username, password, ime_prezime) VALUES (%s, %s, %s);"""
 sql_podaci_korisnika = """SELECT password, ime_prezime FROM korisnik WHERE username = %s;"""
-#
-#
+#1
+#2
 
 def set_session_data(username, ime_korisnika):
 
@@ -162,15 +162,15 @@ def isAuthorized(role):
         return False
 
     if conn:
-        #
-        #
+        #3
+        #4
         
         return len(result)>0
 
     return False
 
 @app.route("/financije")
-#
+#5
 def show_financije():
    
     curr = conn.cursor()
@@ -180,7 +180,7 @@ def show_financije():
     return render_template("financije.html", naziv=title, rows=rows, ime=session["ime_korisnika"]) 
 
 @app.route("/kontroling")
-#
+#6
 def show_prihodi():
    
     curr = conn.cursor()
